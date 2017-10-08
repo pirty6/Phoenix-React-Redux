@@ -8,4 +8,8 @@ defmodule Sling.Router do
   scope "/api", Sling do
     pipe_through :api
   end
+
+  scope "/", Sling do
+    get "/*", ApplicationController, :not_found
+  end
 end
